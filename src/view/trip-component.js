@@ -30,13 +30,18 @@ export default class TripItemComponent extends AbstractComponent {
         this.#onEdit = onEdit;
 
 
-        this.element.querySelector('.trip-item-delete').addEventListener('click', this.#deleteHandler);
+        this.element.querySelector('.trip-item-delete').addEventListener('click', this.#deleteHandler)
         this.element.querySelector('.trip-item-edit').addEventListener('click', this.#editHandler);
     }
 
 
     #deleteHandler = () => this.#onDelete(this.#trip.id);
-    #editHandler = () => this.#onEdit(this.#trip);
+    #editHandler = () => this.#onEdit(this); 
+
+
+    get trip() {
+        return this.#trip;
+    }
 
 
     get template() {

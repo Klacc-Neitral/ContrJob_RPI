@@ -22,12 +22,8 @@ function handleAddTrip(trip) {
   tripsPresenter.addTrip(trip);
 }
 
-function handleFilterChange(filterState) {
-  tripsPresenter.setFilter(filterState);
-}
 
 render(new HeaderComponent(), containerComponent.element, RenderPosition.AFTERBEGIN);
 render(new AddTripComponent({ onSubmit: handleAddTrip }), containerComponent.element, RenderPosition.AFTERBEGIN);
-render(new TripFilterComponent({ onChange: handleFilterChange }), containerComponent.element, RenderPosition.BEFOREEND);
 
 tripsPresenter.init();
